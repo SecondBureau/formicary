@@ -3,17 +3,13 @@ module Formicary
     private
 
     def chartNodes(chartId)
-
-      origin = Node.find(Node.all(
-        :select => 'nodes.id',
-        :conditions => ["chart_id = ?", chartId],
-        :joins => 'LEFT JOIN "parents_children" ON "parents_children"."child_id" = "nodes"."id"',
-        :group => "parent_id",
-        :having => "count(parent_id) <= 0").first)
-
-      return buildOrg(origin).to_json if origin
+      #TODO : return if chartID doesn't exist.
+      #TODO : performances issue. Cache needed (either in database chart model, or rails cache)
+      origin = Chart.find(chartId).nodes.select{|n| n.parents.count.eql?(0)}.first
+      buildOrg(origin).to_json if origin
     end
 
+    #TODO : rewrite with inject?
     def buildOrg(node)
       children = []
       if node.children
@@ -28,7 +24,7 @@ module Formicary
         end
       end
 
-      obj = {
+      {
         :id => node.id,
         :title => node.title,
         :english => node.english,
@@ -39,7 +35,6 @@ module Formicary
         :children => children,
         :parents => parents
       }
-      return obj
     end
   end
 end
