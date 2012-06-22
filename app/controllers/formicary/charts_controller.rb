@@ -160,7 +160,7 @@ module Formicary
 
       respond_to do |format|
         if @chart.update_attributes(params[:chart])
-          format.html { redirect_to @chart, notice: 'Chart was successfully updated.' }
+          format.html { redirect_to orgchart.charts_path, notice: 'Chart was successfully updated.' }
           format.json { head :no_content }
         else
           format.html { render action: "edit" }
