@@ -144,7 +144,7 @@ module Formicary
 
       respond_to do |format|
         if @chart.save
-          format.html { redirect_to orgchart.build_path(@chart) }
+          format.html { redirect_to orgchart.build_chart_path(@chart) }
           format.json { render json: @chart, status: :created, location: @chart }
         else
           format.html { render action: "new" }
