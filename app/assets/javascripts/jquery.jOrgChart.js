@@ -74,7 +74,7 @@
     if (level == 0)
       $table = $("<table cellpadding='0' cellspacing='0' border='0' style='min-width:570px;'/>");
     else
-      $table = $("<table cellpadding='0' cellspacing='0' border='0'/>");
+      $table = $("<table cellpadding='0' cellspacing='0' border='0' style='margin-right:auto;margin-left:auto'/>");
     var $tbody = $("<tbody/>");
 
     // Construct the node container(s)
