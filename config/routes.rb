@@ -14,6 +14,7 @@ Formicary::Engine.routes.draw do
       match 'charts/:id/deleteFromChart' => 'charts#deleteFromChart'
       match 'charts/:id/nodeOnChart' => 'charts#nodeOnChart'
       match 'charts/:id/loadNode' => 'charts#loadNode'
+      match 'charts/:id/loadChart' => 'charts#loadChart'
       match 'charts/:id/loadNodes' => 'charts#loadNodes'
       match 'nodes/:id' => 'nodes#destroy', :as => :destroy_node
 

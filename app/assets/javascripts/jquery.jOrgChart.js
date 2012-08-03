@@ -35,25 +35,24 @@
 
     $appendTo.append($container);
 
-
 		$container.css('width', 0);
 
 		var right_node_la_plus_a_droite = 0;
 
-    $(".node").each(function(){
-      if((parseInt($(this).offset().top)-$('#chart').offset().top) > parseInt($container.css('height')))
+    $(opts.chartElement+" .node").each(function(){
+      if((parseInt($(this).offset().top)-$appendTo.offset().top) > parseInt($container.css('height')))
         $container.css('height', parseInt($(this).offset().top));
 
-      y = parseInt($(this).offset().left) + parseInt($(this).css('width')) - $('#chart').offset().left;
+      y = parseInt($(this).offset().left) + parseInt($(this).css('width')) - $appendTo.offset().left;
 
       if (y > right_node_la_plus_a_droite)
       	right_node_la_plus_a_droite = y;
 
       $container.css('width', '100%');
     });
-    $("#chart").css('width', right_node_la_plus_a_droite);
+    $appendTo.css('width', right_node_la_plus_a_droite);
 
-    drawLines($container);
+    drawLines($appendTo, $container);
   };
 
   // Option defaults
@@ -211,12 +210,12 @@
     $appendTo.append($table);
   };
 
-  drawLines = function(container) {
+  drawLines = function(appendTo, container) {
 
     arrayOfAlready = [];
 
-    topOffset = $('#chart').offset().top - 8;
-    leftOffset = $('#chart').offset().left;
+    topOffset = appendTo.offset().top - 8;
+    leftOffset = appendTo.offset().left;
 
     $('.node').each(function(){
       coord = $(this).offset();
@@ -235,7 +234,7 @@
         $leftLine.css('left', coord.left - 28 - leftOffset);
         $leftLine.css('width', 28);
         $leftLine.css('height', 2);
-        $('#chart').append($leftLine);
+        appendTo.append($leftLine);
 
         // Line to the parent
         var bas_du_parent = $parentCoord.top + parseInt($parent.css('height')) + 16;
@@ -246,7 +245,7 @@
         $lineToParent.css('left', coord.left - 28 - leftOffset);
         $lineToParent.css('width', 20);
         $lineToParent.css('height', Math.abs(coord.top - bas_du_parent) + 20);
-        $('#chart').append($lineToParent);
+        appendTo.append($lineToParent);
 
         return;
       }

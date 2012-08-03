@@ -99,6 +99,12 @@ module Formicary
       render :json => @nodes.to_json
     end
 
+    def loadChart
+      @chart = Chart.find(params[:id])
+      @data = chartNodes(@chart.id)
+      render :json => @data
+    end
+
     # GET /charts
     # GET /charts.json
     def index
