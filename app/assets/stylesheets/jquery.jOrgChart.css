@@ -48,16 +48,16 @@
 .jOrgChart .node {
   background-color : #FFF;
   display: inline-block;
-  width: 140px;
+  width: 130px;
   /*height: 40px;*/
   z-index: 10;
   margin: 0 2px;
   color:#444;
   box-shadow:0px 1px 3px #AAA;
   font-family:Trebuchet MS;
-  padding:10px;
+  padding:10px 4px;
   border:2px solid #FFF;
-  font-size:12px;
+  font-size:11px;
 }
 
 .jOrgChart .node-highlight:hover {
@@ -65,7 +65,7 @@
 }
 
 .jOrgChart .node .title {
-  font-size:14px;
+  font-size:13px;
   font-weight:bold;
   color:#800000;
 }
