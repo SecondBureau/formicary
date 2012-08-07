@@ -29,6 +29,7 @@ module Formicary
         :title => node.title,
         :english => node.english,
         :chinese => node.chinese,
+        :to_url => node.to_url,
         :comment => node.comment,
         :decoration => node.decoration,
         :node_type => node.node_type,

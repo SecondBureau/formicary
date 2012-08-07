@@ -1,6 +1,6 @@
 class Node < ActiveRecord::Base
 
-  attr_accessible :title, :english, :chinese, :comment, :chart_id, :decoration, :node_type
+  attr_accessible :title, :english, :chinese, :comment, :chart_id, :decoration, :node_type, :to_url
 
   belongs_to :chart
 

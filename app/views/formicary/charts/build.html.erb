@@ -49,6 +49,7 @@
         $('input[name=chinese]').val(result['chinese']);
         $('input[name=english]').val(result['english']);
         $('input[name=comment]').val(result['comment']);
+        $('input[name=to_url]').val(result['to_url']);
 
         decorations=result['decoration'].split(';');
         for (var i=0; i<decorations.length; i++)
@@ -234,6 +235,7 @@
       <label>Title :</label><input type="text" name="title"/><br>
       <label>English :</label><input type="text" name="english"/><br>
       <label>Chinese :</label><input type="text" name="chinese"/><br>
+      <label>Link :</label><input type="text" name="to_url"/><br>
       <label>Comment :</label><input type="text" name="comment"/><br>
       <label>Type :</label><select name="node_type"style="width:100px;"><option value="">Standard</option><option value="pile">Pile</option><option value="pile-son">Pile-son</option></select><br>
     </fieldset>

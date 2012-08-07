@@ -116,7 +116,14 @@
     $nodeDiv.attr('node_type', $node['node_type']);
     $nodeDiv.attr('level', level);
 
-    $nodeCell.append($nodeDiv);
+    if ($node['to_url'])
+    {
+      $nodeLink = $("<a href='"+$node['to_url']+"'>");
+      $nodeLink.append($nodeDiv);
+      $nodeCell.append($nodeLink);
+    }
+    else
+      $nodeCell.append($nodeDiv);
     $nodeRow.append($nodeCell);
     $tbody.append($nodeRow);
 

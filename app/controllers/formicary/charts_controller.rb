@@ -23,6 +23,7 @@ module Formicary
           :title => params[:title],
           :english => params[:english],
           :chinese => params[:chinese],
+          :to_url => params[:to_url],
           :comment => params[:comment],
           :decoration => 'width:'+width +';background-color:'+ params[:background_color] +';border-color:'+ params[:border_color],
           :node_type => params[:node_type],
@@ -43,6 +44,7 @@ module Formicary
         node.title = params[:title]
         node.english = params[:english]
         node.chinese = params[:chinese]
+        node.to_url = params[:to_url]
         node.comment = params[:comment]
         # For the pile-son, only the modification of the parent (pile) can reset the node_type
         if node.node_type != "pile-son"
