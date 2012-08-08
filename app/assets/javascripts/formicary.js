@@ -45,17 +45,18 @@ jQuery.fn.multiselect = function() {
     });
 };
 
-var displayChart = function(node_id, div_id){
+var displayChart = function(node_id, div_id, url_for_nodes){
   $.post('/orgchart/charts/'+node_id+'/loadChart', {id : node_id}, function(result) {
-    initChart(div_id, result);
+    initChart(div_id, result, url_for_nodes);
   });
 }
 
-var initChart = function(div_id, data) {
+var initChart = function(div_id, data, url_for_nodes) {
 
   $(div_id).jOrgChart({
     chartElement : div_id,
     dragAndDrop  : false,
+    url_for_nodes : url_for_nodes,
     data:data
   });
 
