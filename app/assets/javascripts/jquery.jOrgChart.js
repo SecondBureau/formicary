@@ -244,7 +244,7 @@
         appendTo.append($leftLine);
 
         // Line to the parent
-        var bas_du_parent = $parentCoord.top + parseInt($parent.css('height')) + 16;
+        var bas_du_parent = $parentCoord.top + parseInt($parent.css('height'))+4;
         $lineToParent = $("<div>");
         $lineToParent.css('position', 'absolute');
         $lineToParent.css('border-left', '2px solid #AAA');
@@ -293,10 +293,10 @@
 
           // Line between the horizontal line and the parent
           var bas_du_parent = $parentCoord.top + parseInt($parent.css('height'));
-          var top_trait_horizontal_parent = coord.top - 42;
+          var top_trait_horizontal_parent = coord.top - 30;
           $nodeJonctionLine = $("<div>").addClass('chart-line');
           $nodeJonctionLine.css('position', 'absolute');
-          $nodeJonctionLine.css('top', $parentCoord.top + parseInt($parent.css('height')) + 16 - topOffset);
+          $nodeJonctionLine.css('top', $parentCoord.top + parseInt($parent.css('height')) + 4 - topOffset);
           $nodeJonctionLine.css('border-left', '2px solid #AAA');
           $nodeJonctionLine.css('left', parentMiddle - leftOffset);
           $nodeJonctionLine.css('width', 2);
