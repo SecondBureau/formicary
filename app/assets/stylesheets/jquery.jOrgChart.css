@@ -79,10 +79,7 @@
 }
 
 .jOrgChart .node .translation {
-  color:#800000;
-}
-
-.jOrgChart .node .translation {
+  color:#222;
   font-style:italic;
 }
 
