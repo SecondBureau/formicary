@@ -269,6 +269,12 @@
         $nodeJonctionLine.css('height', 20);
         container.append($nodeJonctionLine);
 
+        // The arrow
+        $arrow = $("<div>").addClass('arrow');
+        $arrow.css('top', coord.top - 28 - topOffset + 20 - 10);
+        $arrow.css('left', (coord.left + parseInt($(this).css('width'))/2 - leftOffset) - 4);
+        container.append($arrow);
+
         // We do the lines for each parents
         var myArray = $(this).attr('parents').split(',');
         for(var i=0; i<myArray.length; i++) {

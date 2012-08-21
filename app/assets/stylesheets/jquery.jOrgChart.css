@@ -14,6 +14,14 @@
   width:100%;
 }
 
+/* Arrow */
+.arrow {
+  width:10px;
+  height:10px;
+  background:url(end-arrow.gif);
+  position:absolute;
+}
+
 /* Draw the lines */
 .jOrgChart .line {
   height                : 25px;
