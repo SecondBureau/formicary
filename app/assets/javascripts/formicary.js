@@ -45,8 +45,8 @@ jQuery.fn.multiselect = function() {
     });
 };
 
-var displayChart = function(node_id, div_id, url_for_nodes){
-  $.post('/orgchart/charts/'+node_id+'/loadChart', {id : node_id}, function(result) {
+var displayChart = function(chart_id, div_id, url_for_nodes){
+  $.post('/orgchart/charts/'+chart_id+'/loadChart', {id : chart_id}, function(result) {
     initChart(div_id, result, url_for_nodes);
   });
 }

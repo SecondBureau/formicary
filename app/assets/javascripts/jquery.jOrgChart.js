@@ -97,8 +97,21 @@
 
     //Increaments the node count which is used to link the source list and the org chart
   	nodeCount++;
-  	//$node.data("tree-node", nodeCount);
+
   	$nodeDiv = $("<div>").data("tree-node", nodeCount).append(title, english, chinese, comment);
+  	if ($node['to_url'])
+  	{
+      $.ajax({
+        url: '/leaders/groups/getContentToDisplay',
+        type: 'post',
+        data: { group_id: $node['to_url'] },
+        async: false,
+        success: function(data) {
+          $nodeDiv.append(data);
+        }
+      });
+    }
+
     $nodeDiv.attr('style', $node['decoration']);
     $nodeDiv.addClass("node");
     $nodeDiv.attr('id', 'p'+$node['id']);

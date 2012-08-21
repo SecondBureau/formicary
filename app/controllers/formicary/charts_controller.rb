@@ -16,6 +16,7 @@ module Formicary
     end
 
     def nodeOnChart
+      height = (params[:height]) ? params[:height] : ''
       width = (params[:width]) ? params[:width] : ''
 
       if params[:node_id].empty?
@@ -25,7 +26,7 @@ module Formicary
           :chinese => params[:chinese],
           :to_url => params[:to_url],
           :comment => params[:comment],
-          :decoration => 'width:'+width +';background-color:'+ params[:background_color] +';border-color:'+ params[:border_color],
+          :decoration => 'height:'+height+';width:'+width +';background-color:'+ params[:background_color] +';border-color:'+ params[:border_color],
           :node_type => params[:node_type],
           :chart_id => params[:chart_id]
         )
@@ -50,7 +51,7 @@ module Formicary
         if node.node_type != "pile-son"
           node.node_type = params[:node_type]
         end
-        node.decoration = 'width:'+width +';background-color:'+ params[:background_color] +';border-color:'+ params[:border_color]
+        node.decoration = 'height:'+height +';width:'+width +';background-color:'+ params[:background_color] +';border-color:'+ params[:border_color]
 
         if params[:parents] && !params[:parents].empty?
 

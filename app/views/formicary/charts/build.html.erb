@@ -60,6 +60,7 @@
         }
         $('input[name=border_color]').css('background-color',$('input[name=border_color]').val());
         $('input[name=background_color]').css('background-color',$('input[name=background_color]').val());
+
         if ($('input[name=width]').val() != '')
         {
           $("#activeWidth").attr('checked', true);
@@ -177,13 +178,13 @@
 		$( "#slider" ).slider({
 			value: 100,
 			min: 0,
-			max: 100,
+			max: 800,
 			step: 1,
 			slide: function( event, ui ) {
-				$( "#width" ).val( ui.value +'%' );
+				$( "#width" ).val( ui.value +'px' );
 			}
 		});
-		$( "#width" ).val($( "#slider" ).slider( "value" )+'%');
+		$( "#width" ).val($( "#slider" ).slider( "value" )+'px');
 
 		$("#activeWidth").change(function(){
 			if ($(this).is(':checked'))
@@ -242,6 +243,8 @@
     <fieldset>
     <legend>Decoration</legend>
     	<div style="width:280px;float:left;">
+    	<label>Hauteur :</label>
+    	<input type="text" id="height" name="height" style="width:50px;"/>
       <input type="checkbox" id="activeWidth" style="width:15px;float:left;"><label for="width" style="width:150px;">Check to set the width</label>
       <input type="text" id="width" name="width" style="width:50px;margin-top:-3px;text-align:center;border:0; color:#444; text-shadow:0px 1px 0px white; font-weight:bold;" disabled/>
       <div id="slider" style="width:220px;margin-left:5px;margin-top:10px;"></div>
