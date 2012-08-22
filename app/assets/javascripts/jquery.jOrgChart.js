@@ -19,6 +19,9 @@
     $('.chart-line').each(function(){
       $(this).remove();
     });
+    $('.arrow').each(function(){
+      $(this).remove();
+    });
 
     drawLines();
   }
