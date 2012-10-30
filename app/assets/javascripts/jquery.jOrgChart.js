@@ -134,7 +134,7 @@
 
     if ($node['to_url'])
     {
-      $nodeLink = $("<a class='node-link' href='"+opts.url_for_nodes+$node['to_url']+"'>");
+      $nodeLink = $("<a class='node-link' href='"+opts.url_for_nodes+$node['to_url']+"'></a>");
       $nodeLink.append($nodeDiv);
       $nodeCell.append($nodeLink);
     }
