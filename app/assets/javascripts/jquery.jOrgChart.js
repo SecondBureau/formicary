@@ -102,7 +102,7 @@
   	nodeCount++;
 
   	$nodeDiv = $("<div>").data("tree-node", nodeCount).append(title, english, chinese, comment);
-  	if ($node['to_url'])
+  	if (false && $node['to_url'])
   	{
       $.ajax({
         url: '/leaders/groups/getContentToDisplay',
