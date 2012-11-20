@@ -31,6 +31,7 @@ module Formicary
         :chinese => node.chinese,
         :to_url => node.to_url,
         :comment => node.comment,
+        :position => node.position,
         :decoration => node.decoration,
         :node_type => node.node_type,
         :children => children,
