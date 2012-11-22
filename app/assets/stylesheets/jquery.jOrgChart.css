@@ -20,21 +20,24 @@
   height:10px;
   background:url(end-arrow.gif);
   position:absolute;
+  display:none;
 }
 
 /* Draw the lines */
 .jOrgChart .line {
-  height                : 20px;
+  height                : 10px;
   width                 : 0px;
 }
 
 .jOrgChart .down {
   background-color 		: #fff;
   margin 				: 0px auto;
+  height: 10px;
 }
 
 .jOrgChart .top {
   border-top          : 0px solid #fff;
+
 }
 
 .jOrgChart .left {
