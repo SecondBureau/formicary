@@ -139,7 +139,14 @@
 
     if ($node['to_url'])
     {
-      $nodeLink = $("<a class='node-link' href='"+opts.url_for_nodes+$node['to_url']+"'></a>");
+      //En mode build, permet d'avoir une URL valide.
+      //Très mauvais pour la réutilisabilité mais a prioiri formicary ne sera jamais
+      //utilisé ailleurs...
+      url_for_nodes = opts.url_for_nodes;
+      if (url_for_nodes == undefined)
+        url_for_nodes = "/leaders/groups/";
+
+      $nodeLink = $("<a class='node-link' href='"+url_for_nodes+$node['to_url']+"'></a>");
       $nodeLink.append($nodeDiv);
       $nodeCell.append($nodeLink);
     }
