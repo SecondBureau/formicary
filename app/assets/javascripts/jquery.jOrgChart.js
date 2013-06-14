@@ -45,8 +45,6 @@
     $(opts.chartElement+" .node").each(function(){
       if((parseInt($(this).offset().top)-$appendTo.offset().top) > parseInt($container.css('height')))
         $container.css('height', parseInt($(this).offset().top));
-      
-      $container.css('height', parseInt($container.css('height')) + 100);
 
       y = parseInt($(this).offset().left) + parseInt($(this).css('width')) - $appendTo.offset().left;
 
